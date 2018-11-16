@@ -1,0 +1,31 @@
+<div *ngIf="counterData != null">
+    <div>
+        <h2>Counter Details</h2>
+        <div><span>Name: </span>Countdown</div>
+        <div>
+            <span>Countdown date: </span> <input [(ngModel)]="counterData.datediff.options.countdownTo" type="date"
+                [disabled]="countdownCounterDisabled">
+        </div>
+        Active:
+        <label class="switch" title="Active">
+            <input [(ngModel)]="counterData.datediff.options.active" value="afteldatumTot" placeholder="countdownCounterActive" type="checkbox" (change)="onClickActive($event)"
+                [disabled]="countdownCounterDisabled">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div>
+        <h2>Counter Details</h2>
+        <div><span>Name: </span>Meetup</div>
+        <div>
+            <span>Event ID: </span> <input [(ngModel)]="counterData.meetup.options.eventId" type="text"
+                [disabled]="countdownCounterDisabled">
+        </div>
+        Active:
+        <label class="switch" title="Active">
+            <input [(ngModel)]="counterData.meetup.options.active" value="eventId" placeholder="meetupCounterActive" type="checkbox" (change)="onClickActive($event)"
+                [disabled]="meetupCounterDisabled">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <button type="submit" (click)="onClickSubmit($event)">Save</button>
+</div>
